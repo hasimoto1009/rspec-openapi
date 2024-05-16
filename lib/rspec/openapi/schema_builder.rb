@@ -18,8 +18,12 @@ class << RSpec::OpenAPI::SchemaBuilder = Object.new
       if has_content
         response[:content] = {
           normalize_content_type(record.response_content_type) => {
-            schema: build_property(record.response_body, disposition: disposition),
-            example: response_example(record, disposition: disposition),
+            examples: {
+              'when have data' => {
+                schema: build_property(record.response_body, disposition: disposition),
+                example: response_example(record, disposition: disposition),
+              },
+            },
           }.compact,
         }
       end
