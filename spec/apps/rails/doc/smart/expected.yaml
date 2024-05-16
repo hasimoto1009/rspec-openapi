@@ -71,26 +71,28 @@ paths:
           description: with flat query parameters
           content:
             application/json:
-              schema:
-                type: array
-                items:
-                  "$ref": "#/components/schemas/Table"
-              example:
-              - id: 42
-                name: access
-                description: logs
-                database:
-                  id: 4242
-                  name: production
-                null_sample:
-                storage_size: 12.3
-                created_at: '2020-07-17T00:00:00+00:00'
-                updated_at: '2020-07-17T00:00:00+00:00'
-                columns:
-                  - name: id
-                    column_type: integer
-                  - name: description
-                    column_type: varchar
+              examples:
+                'when have date':
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/Table"
+                  example:
+                  - id: 42
+                    name: access
+                    description: logs
+                    database:
+                      id: 4242
+                      name: production
+                    null_sample:
+                    storage_size: 12.3
+                    created_at: '2020-07-17T00:00:00+00:00'
+                    updated_at: '2020-07-17T00:00:00+00:00'
+                    columns:
+                      - name: id
+                        column_type: integer
+                      - name: description
+                        column_type: varchar
           headers:
             X-Cursor:
               schema:
